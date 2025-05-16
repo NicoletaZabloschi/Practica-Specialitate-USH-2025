@@ -1,2 +1,10 @@
 __pycache__/
 *.log
+AppData/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.envrc
+.DS_Store

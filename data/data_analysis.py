@@ -1,5 +1,3 @@
-# data/data_analysis.py
-
 from collections import Counter
 import re
 

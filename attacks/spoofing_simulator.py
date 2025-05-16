@@ -1,7 +1,6 @@
 import socket
-from utils.logger import log_alert
 
-def start_spoofing():
+def start_spoofing(log_func):
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         spoofed_ip = "1.2.3.4"
@@ -9,7 +8,7 @@ def start_spoofing():
         target_port = 5000
 
         s.sendto(b"Test spoofing", (target_ip, target_port))
-        log_alert(f"Packet spoofed de la {spoofed_ip} catre {target_ip}:{target_port}", attack_type="Spoofing")
+        log_func(f"[ALERT LOG] Tip atac: Spoofing - Packet spoofed de la {spoofed_ip} catre {target_ip}:{target_port}")
         s.close()
     except Exception as e:
-        log_alert(f"Eroare spoofing: {e}", attack_type="Spoofing")
+        log_func(f"[ALERT LOG] Tip atac: Spoofing - Eroare spoofing: {e}")

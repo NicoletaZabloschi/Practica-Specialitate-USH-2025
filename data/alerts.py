@@ -12,14 +12,15 @@ def analiza_alerte(log_file_path='data/alerts.log'):
                     if tip_alerta:
                         tipuri_alerte.append(tip_alerta)
     except FileNotFoundError:
-        print("[ERROR] Fisierul de log nu a fost gasit.")
-        return
+        return "[ERROR] Fisierul de log nu a fost gasit."
 
     counter = Counter(tipuri_alerte)
 
-    print("\nNumarul total de alerte pe fiecare tip:")
     if counter:
+        rezultat = "\nNumarul total de alerte pe fiecare tip:\n"
         for tip, nr in counter.items():
-            print(f"{tip}: {nr}")
+            rezultat += f"{tip}: {nr}\n"
     else:
-        print("Nu s-au gasit alerte în fisier.")
+        rezultat = "Nu s-au gasit alerte în fisier."
+
+    return rezultat
