@@ -14,7 +14,7 @@ def attack():
         s.send(b"GET / HTTP/1.1\r\nHost: target\r\n\r\n")
         time.sleep(1)
         s.close()
-        log_alert(f"Conexiune trimisă către {TARGET_IP}:{TARGET_PORT}", attack_type="DDoS")
+        log_alert(f"Conexiune trimisa catre {TARGET_IP}:{TARGET_PORT}", attack_type="DDoS")
     except Exception as e:
         log_alert(f"Eroare conexiune: {e}", attack_type="DDoS")
 

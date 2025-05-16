@@ -8,4 +8,4 @@ def log_alert(message: str, attack_type: str = None):
                 file.write(message + "\n")
                 print(f"[ALERT LOG] {message}")
     except Exception as e:
-        print(f"[ERROR] Nu s-a putut scrie în fisier: {e}")
+        print(f"[ERROR] Nu s-a putut scrie in fisier: {e}")

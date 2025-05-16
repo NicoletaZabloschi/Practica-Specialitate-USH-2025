@@ -11,7 +11,7 @@ def monitor_connections():
     if len(active) > CONNECTION_THRESHOLD:
         log_alert(f"Numar mare de conexiuni active detectat: {len(active)}")
 
-    print(f"[INFO] Conexiuni active: {len(active)}")
+
 
 def start_monitoring():
     print("[INFO] Agentul de monitorizare ruleaza...")
